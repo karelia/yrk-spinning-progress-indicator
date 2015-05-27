@@ -35,6 +35,21 @@
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)coder {
+    self = [super initWithCoder:coder];
+    if (self) {
+        _position = 0;
+        _numFins = 12;
+        _isAnimating = NO;
+        _isFadingOut = NO;
+        _isIndeterminate = YES;
+        _currentValue = 0.0;
+        _maxValue = 100.0;
+        _foreColor = [[NSColor blackColor] copy];
+    }
+    return self;
+}
+
 - (void) dealloc {
     [_foreColor release];
     [_backColor release];
